@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--PRIMEIRA PAGINA-->
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-widht, initial-scale=1" />
+    <title>Pagina Inicial</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap-4.3.1-dist/css/">
+    <link rel="stylesheet" href="~/lib/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="~/css/Sitestyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+
+
+</head>
+
+<body id="naodacerto">
+
+    <div id="cabecalho">
+        <a class="signin" href="@Url.Action("GoToRegister")" style="color: #000;
+             font-family: 'Poppins', sans-serif;
+             position: absolute;
+             right: 5%;
+             top: 30%;">Sign in</a>
+    </div>
+
+    <div class="phantomgames">
+        <img src="~/Imagens/logo.png" class="logo">
+        <p class="titulo">phantomgames</p>
+    </div>
+    <p id="text1"> Who are we? What we do?</p>
+    <p id="explicacao">
+        Choosing a game on Steam is like looking at the Netflix catalog, many options, takes you time and money. But what if there was a quick way to find a game you'll love and can really relate?
+    </p>
+
+    <a href="@Url.Action("GoToSaveResults")"><input class="Start" type="button" value="START" /></a>
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+    <div id="rodape"></div>
+
+</body>
+</html>
+
+
+@*<div id="apagarconta">
+        <a class="apagarconta" href="@Url.Action("Deletar")" style="color: #000;
+             font-family: 'Poppins', sans-serif;
+             position: absolute;
+             left: 5%;
+             top: 10%;">Deletar Conta</a>
+    </div>*@
+
+
+
+
+
+
+
+
+

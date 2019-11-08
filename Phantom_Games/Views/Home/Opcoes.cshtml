@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Login user = ViewBag.user;
+}
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-widht, initial-scale=1" />
+    <title>Preferência</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/TesteStyle.css">
+</head>
+
+<body id="naodacerto" style="background-color: #EDEFF5;">
+    <div id="cabecalho"></div>
+    <p class="hi">Hi, <span id="user-name"></span></p>
+    <h1 class="pick">Pick a game based on</h1>
+
+
+    <a href="~/Home/Personality"><input class="per" type="button" value="Your Personality!" /></a>
+    <a href="~/Home/Preferences"><input class="pre" type="button" value="Your Preferences!" /></a>
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+    <div id="rodape"></div>
+    <script type="text/javascript">
+        document.getElementById("user-name").textContent = sessionStorage.getItem("TempUser");
+
+        
+        @if (user == null)
+        {
+            <text>
+            document.getElementById("user-name").textContent = sessionStorage.getItem("TempUser");
+            </text>
+        }
+        else
+        {
+            <text>
+            document.getElementById("user-name").textContent = "@user.Name";
+            </text>
+        }
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

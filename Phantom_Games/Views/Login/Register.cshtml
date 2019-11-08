@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/login-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body id="naodacerto">
+    <div class="cabecalho"></div>
+
+    <div class="login-wrapper">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#cadastrar">Sign up</a>
+            </li>
+        </ul>
+
+        <form id="login" method="post" action="@Url.Action("Logar")">
+
+            <div class="form-group form-top">
+                <label for="Email">E-mail</label>
+                <input type="email" id="Email" class="form-control bfh-languages" data-language="en" aria-describedby="emailHelp" placeholder="Type your E-mail">
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input type="password" class="form-control" id="Password" placeholder="Type your password">
+            </div>
+            @*<div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                </div>*@
+
+
+            <a href="@Url.Action("GoToOp")"> <input id="btnlogin" type="submit" class="btn btn-primary" value="Login" /> </a>
+        </form>
+
+        <form id="cadastrar" class="d-none" method="post" action="@Url.Action("SalvarNovo")">
+            <div class="form-group form-top">
+                <label for="Name2">Full name</label>
+                <input type="text" class="form-control" id="Name2" name="Name" aria-describedby="emailHelp" placeholder="Type your name">
+            </div>
+            <div class="form-group">
+                <label for="Email2">E-mail</label>
+                <input type="email" class="form-control" id="Email2" name="Email" aria-describedby="emailHelp" placeholder="Type your E-mail">
+            </div>
+            <div class="form-group">
+                <label for="Password2">Password</label>
+                <input type="password" class="form-control" id="Password2" name="Password" placeholder="Type your password">
+            </div>
+            <!--<div class="form-group">
+                <label for="exampleInputPassword1">Confirm your password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Retype your passaword">
+            </div>-->
+            <a href="@Url.Action("GoToOp")"> <input id="btnregister" data-language="en" type="submit" class="btn btn-primary" value="Register" /> </a>
+        </form>
+    </div>
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+    <div class="rodape"></div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.nav-link').on('click', function (event) {
+                event.preventDefault();
+
+                $('.nav-link.active').removeClass('active');
+                var navLink = $(event.target);
+                navLink.addClass('active');
+
+                $('form').hide();
+
+                var formId = navLink.attr('href');
+                $(formId).removeClass('d-none').show();
+            });
+        });
+    </script>
+</body>
+</html>
+
+

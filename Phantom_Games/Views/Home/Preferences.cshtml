@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Pesquisar";
+}
+
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewpoint" content="width=device-widht, initial-scale=1" />
+    <title>Ação</title>
+    <link rel="stylesheet" href="~/lib/bootstrap-4.3.1-dist/css/">
+    <link rel="stylesheet" href="~/lib/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="~/css/acaostyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cabecalho"></div>
+    <div>
+        <h1 class="choose">Choose a genre and then we'll be narrowing it down</h1>
+    </div>
+
+    <select class="acao" size="1" id="cbAcao">
+        <option value="360 Video ✖">360 Video</option>
+        <option value="Action ✖">Action</option>
+        <option value="Adventure ✖">Adventure</option>
+        <option value="Animation & Modeling ✖">Animation &amp; Modeling</option>
+        <option value="Audio Production ✖">Audio Production</option>
+        <option value="Casual ✖">Casual</option>
+        <option value="Design & Illustration ✖">Design &amp; Illustration</option>
+        <option value="Documentary ✖">Documentary</option>
+        <option value="Early Access ✖">Early Access</option>
+        <option value="Education ✖">Education</option>
+        <option value="Episodic ✖">Episodic</option>
+        <option value="Free to Play ✖">Free to Play</option>
+        <option value="Game Development ✖">Game Development</option>
+        <option value="Gore ✖">Gore</option>
+        <option value="Indie ✖">Indie</option>
+        <option value="Massively Multiplayer ✖">Massively Multiplayer</option>
+        <option value="Movie ✖">Movie</option>
+        <option value="Nudity ✖">Nudity</option>
+        <option value="Photo Editing ✖">Photo Editing</option>
+        <option value="Racing ✖">Racing</option>
+        <option value="RPG ✖">RPG</option>
+        <option value="Sexual Content ✖">Sexual Content</option>
+        <option value="Short ✖">Short</option>
+        <option value="Simulation ✖">Simulation</option>
+        <option value="Softaware Training ✖">Softaware Training</option>
+        <option value="Sports ✖">Sports</option>
+        <option value="Startegy ✖">Strategy</option>
+        <option value="Tutorial ✖">Tutorial</option>
+        <option value="Utilities ✖">Utilities</option>
+        <option value="Video Production ✖">Video Production</option>
+        <option value="Violent ✖">Violent</option>
+        <option value="Web Publishing ✖">Web Publishing</option>
+
+    </select>
+
+    <div id="divSelecionados"></div>
+    <div id="background-wrap">
+        <div class="bubble x1"></div>
+        <div class="bubble x2"></div>
+        <div class="bubble x3"></div>
+        <div class="bubble x4"></div>
+        <div class="bubble x5"></div>
+        <div class="bubble x6"></div>
+        <div class="bubble x7"></div>
+        <div class="bubble x8"></div>
+        <div class="bubble x9"></div>
+        <div class="bubble x10"></div>
+    </div>
+    <div class="rodape"></div>
+
+    <script type="text/javascript">
+        var selecionados = [];
+        var cbAcao = document.getElementById("cbAcao");
+        var divSelecionados = document.getElementById("divSelecionados");
+
+        cbAcao.onchange = function () {
+            var a = cbAcao.value;
+
+            for (var i = 0; i < selecionados.length; i++) {
+                if (a == selecionados[i]) {
+                    return;
+                }
+            }
+
+            selecionados.push(a);
+
+            divSelecionados.innerHTML += '<span class="tag" onclick="remover(this, \'' + a + '\')">' + a + '</span>';
+
+        };
+
+        function remover(tag, valor) {
+            divSelecionados.removeChild(tag);
+
+            for (var i = 0; i < selecionados.length; i++) {
+                if (valor == selecionados[i]) {
+                    selecionados.splice(i, 1);
+                    return;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
